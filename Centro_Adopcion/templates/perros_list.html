@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lista de Perros</h1>
+
+<ul>
+  
+  {% for perro in perros %}
+    <li>
+      <a href="{% url 'DetallePerro' perro.id %}">  
+      {{perro}}
+    </li>
+    <div style="display: flex; column-gap: 5px;">
+      <button>
+        <a href="{% url 'ActualizaPerro' perro.id %}"> Actualizar </a>
+      </button>
+      <button>
+        <a href="{% url 'EliminaPerro' perro.id %}"> Eliminar </a>
+      </button>
+    </div>
+  {% endfor %}
+
+</ul>
+{% endblock %}

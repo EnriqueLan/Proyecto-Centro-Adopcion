@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'EliminaGato' gato.id %}" method="post">{% csrf_token %}
+
+  <p>Estas seguro que desea eliminar esta mascota?</p>
+
+  <button type="submit"> Confirmar </button>
+  <button><a href="{% url 'home' %}"> Cancelar </a> </button>
+
+</form>
+{% endblock %}
