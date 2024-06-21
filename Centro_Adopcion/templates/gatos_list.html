@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
+
 {% block content %}
 <h1>Lista de Gatos</h1>
 
 <ul>
-  
   {% for gato in gatos %}
-    <li>
-      <a href="{% url 'DetalleGato' gato.id %}">  
-      {{gato}}
+    <li style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <a href="{% url 'DetalleGato' gato.id %}">{{ gato }}</a>
+        </div>
+        {% if user.is_staff %}
+        <div>
+          <button style="margin-left: 10px;">
+            <a href="{% url 'ActualizaGato' gato.id %}">Actualizar</a>
+          </button>
+          <button style="margin-left: 10px;">
+            <a href="{% url 'EliminaGato' gato.id %}">Eliminar</a>
+          </button>
+        </div>
+        {% endif %}
+      </div>
     </li>
-    <div style="display: flex; column-gap: 5px;">
-      <button>
-        <a href="{% url 'ActualizaGato' gato.id %}"> Actualizar </a>
-      </button>
-      <button>
-        <a href="{% url 'EliminaGato' gato.id %}"> Eliminar </a>
-      </button>
-    </div>
   {% endfor %}
-
 </ul>
+
 {% endblock %}

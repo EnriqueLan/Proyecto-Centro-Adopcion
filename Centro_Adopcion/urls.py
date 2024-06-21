@@ -1,6 +1,8 @@
 from django.urls import path
 from Centro_Adopcion.views import *
 from Centro_Adopcion import views
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
    path('', views.home, name='home'),
@@ -14,4 +16,7 @@ urlpatterns = [
    path('elimina-gato/<pk>', CatDelete.as_view(), name='EliminaGato'),
    path('actualiza-perro/<pk>', DogUpdate.as_view(), name='ActualizaPerro'),
    path('actualiza-gato/<pk>', CatUpdate.as_view(), name='ActualizaGato'),
+   path('login/', login_view, name='Login'),
+   path('registrar/', register, name='Registrar'),
+   path('logout/', LogoutView.as_view(template_name="logout.html"), name='Logout'),
 ]

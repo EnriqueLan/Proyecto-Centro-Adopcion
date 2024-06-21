@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="{% url 'CreaGato' %}" method="post">{% csrf_token %}
+<form action="{% url 'CreaGato' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
 
     {{form.as_p}}
   

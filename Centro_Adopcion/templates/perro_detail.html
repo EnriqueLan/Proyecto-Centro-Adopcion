@@ -3,4 +3,9 @@
 <h1> Vista en detalle del perro </h1>
 
 <h4> {{perro.Name}}, {{perro.Race}}, {{perro.Gender}}, {{perro.Age}}</h4>
+{% if perro.Foto %}
+    <img src="{{ perro.Foto.url }}" alt="{{ perro.Name }}" style="max-width: 300px; max-height: 300px;">
+{% else %}
+    <p>No hay imagen disponible para este perro.</p>
+{% endif %}
 {% endblock %}
