@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'CreaAvatar' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+    {{miFormulario.as_p}}
+  
+    <button type="submit" class="btn btn-primary" id="sidebarToggle" > Agregar </button>
+  
+  </form>
+{% endblock %}

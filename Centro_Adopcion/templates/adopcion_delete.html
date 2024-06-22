@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'EliminaAdopcion' adopcion.id %}" method="post">{% csrf_token %}
+
+  <p>Estas seguro que desea eliminar esta adopcion?</p>
+
+  <button type="submit"> Confirmar </button>
+  <button><a href="{% url 'home' %}"> Cancelar </a> </button>
+
+</form>
+{% endblock %}

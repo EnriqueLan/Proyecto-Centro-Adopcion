@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Iniciar Sesión</h2>
+<h4>Porfavor Inicie Sesión para acceder a más contenido:</h4>
     <form method="POST">
         {% csrf_token %}
         <div>
@@ -11,6 +12,6 @@
             <label for="{{ miFormulario.password.id_for_label }}">Contraseña</label>
             {{ miFormulario.password }}
         </div>
-        <button type="submit">Iniciar Sesión</button>
+        <button type="submit" class="btn btn-primary" id="sidebarToggle">Iniciar Sesión</button>
     </form>
 {% endblock %}

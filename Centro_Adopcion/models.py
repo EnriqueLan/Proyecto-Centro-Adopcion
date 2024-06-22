@@ -34,13 +34,16 @@ class Cats(models.Model):
 
 class Adopted_Pet(models.Model):
 
-    User_Name=models.CharField(max_length=40)
-    User_Lastname=models.CharField(max_length=40)
-    User_Adress=models.CharField(max_length=100)
-    Celphone_Number=models.IntegerField() #Este si lo puse como Int porque solo pondrán un numero de telefono.
-    Pet_Name=models.CharField(max_length=40)
-    Pet_Race=models.CharField(max_length=40)
+    User_Name=models.CharField(max_length=40, verbose_name="Nombre Real:")
+    User_Lastname=models.CharField(max_length=40, verbose_name="Apellido:")
+    User_Adress=models.CharField(max_length=100, verbose_name="Su dirección:")
+    Celphone_Number=models.IntegerField(verbose_name="Numero de telefono:") #Este si lo puse como Int porque solo pondrán un numero de telefono.
+    Pet_Name=models.CharField(max_length=40, verbose_name="Nombre de la mascota que quiere Adoptar:")
+    Pet_Race=models.CharField(max_length=40, verbose_name="Su especie(Perro o Gato):")
 
+    def __str__(self):
+        return f'{self.User_Name} - {self.Pet_Name} - {self.Pet_Race}'
+    
     class Meta:
         verbose_name = 'Adopted Pet'
         verbose_name_plural = 'Adopted Pets'

@@ -1,13 +1,14 @@
 <div class="border-end bg-white" id="sidebar-wrapper">
-    <div class="sidebar-heading border-bottom bg-light">Panel de Opciones</div>
+    <div class="sidebar-heading border-bottom bg-light" >Panel de Opciones</div>
     <div class="list-group list-group-flush">
         {% if user.is_staff %}
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="background-color: #ffcccb; color: #000;" href="{% url 'CreaPerro' %}">Agregar Perros</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'CreaGato' %}">Agregar Gatos</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="color: black; text-decoration: none;" href="{% url 'CreaPerro' %}">Agregar Perros</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="color: black; text-decoration: none;" href="{% url 'CreaGato' %}">Agregar Gatos</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="color: black; text-decoration: none;" href="{% url 'adopciones_list' %}">Lista de Adopciones</a>
         {% endif %}
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'perros_list' %}">Listar Perros</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'gatos_list' %}">Listar Gatos</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Buscar Mascota</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Vamos a Adoptar!</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="color: black; text-decoration: none;" href="{% url 'perros_list' %}">Listar Perros</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="color: black; text-decoration: none;" href="{% url 'gatos_list' %}">Listar Gatos</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="color: black; text-decoration: none;" href="{% url 'AdoptarMascota' %}">Vamos a Adoptar!</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" style="color: black; text-decoration: none;" href="{% url 'sobrenosotros' %}">Más Sobre Nosotros</a>
     </div>
 </div>

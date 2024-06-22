@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Lista de Perros</h1>
+<h1>Lista de Adopciones</h1>
 
 <ul>
-  {% for perro in perros %}
+  {% for adopcion in adopciones %}
     <li style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
-          <a href="{% url 'DetallePerro' perro.id %}" style="color: black; text-decoration: none;">{{ perro }}</a>
+          <a href="{% url 'DetalleAdopcion' adopcion.id %}" style="color: black; text-decoration: none;">{{ adopcion }}</a>
         </div>
         {% if user.is_staff %}
         <div>
           <button style="margin-left: 10px;" class="btn btn-primary" id="sidebarToggle">
-            <a href="{% url 'ActualizaPerro' perro.id %}" style="color: black; text-decoration: none;">Actualizar</a>
+            <a href="{% url 'ActualizaAdopcion' adopcion.id %}" style="color: black; text-decoration: none;">Actualizar</a>
           </button>
           <button style="margin-left: 10px;" class="btn btn-primary" id="sidebarToggle">
-            <a href="{% url 'EliminaPerro' perro.id %}" style="color: black; text-decoration: none;">Eliminar</a>
+            <a href="{% url 'EliminaAdopcion' adopcion.id %}" style="color: black; text-decoration: none;">Eliminar</a>
           </button>
         </div>
         {% endif %}

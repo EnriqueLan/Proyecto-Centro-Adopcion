@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Información del Usuario</h1>
+
+<p>
+    Nombre: {{ first_name }}<br>
+    Apellido: {{ last_name }}<br>
+    Correo Electrónico: {{ email }}
+</p>
+
+{% if avatar %}
+    <img src="{{ avatar }}" alt="{{ first_name }}" style="max-width: 300px; max-height: 300px;">
+{% else %}
+    <p>No hay imagen disponible para este usuario.</p>
+{% endif %}
+{% endblock %}

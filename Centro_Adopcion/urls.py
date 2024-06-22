@@ -19,4 +19,13 @@ urlpatterns = [
    path('login/', login_view, name='Login'),
    path('registrar/', register, name='Registrar'),
    path('logout/', LogoutView.as_view(template_name="logout.html"), name='Logout'),
+   path('about/', views.about, name='sobrenosotros'),
+   path('adoptar/', AdoptForm.as_view(), name='AdoptarMascota'),
+   path('lista-adopciones/', AdoptList.as_view(), name='adopciones_list'),
+   path('detalle-adopcion/<pk>', AdoptDetail.as_view(), name='DetalleAdopcion'),
+   path('elimina-adopcion/<pk>', AdoptDelete.as_view(), name='EliminaAdopcion'),
+   path('actualiza-adopcion/<pk>', AdoptUpdate.as_view(), name='ActualizaAdopcion'),
+   path('editar-perfil', editar_perfil, name='EditarPerfil'),
+   path('perfil-usuario/', views.perfil_usuario, name='perfil_usuario'),
+   path('agregar-avatar/', agregar_avatar, name='CreaAvatar'),
 ]

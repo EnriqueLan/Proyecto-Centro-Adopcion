@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'AdoptarMascota' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+    {{form.as_p}}
+  
+    <button type="submit" class="btn btn-primary" id="sidebarToggle" > Adoptar </button>
+  
+  </form>
+{% endblock %}

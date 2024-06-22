@@ -8,15 +8,15 @@
     <li style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
-          <a href="{% url 'DetalleGato' gato.id %}">{{ gato }}</a>
+          <a href="{% url 'DetalleGato' gato.id %}" style="color: black; text-decoration: none;">{{ gato }}</a>
         </div>
         {% if user.is_staff %}
         <div>
-          <button style="margin-left: 10px;">
-            <a href="{% url 'ActualizaGato' gato.id %}">Actualizar</a>
+          <button style="margin-left: 10px;" class="btn btn-primary" id="sidebarToggle">
+            <a href="{% url 'ActualizaGato' gato.id %}" style="color: black; text-decoration: none;">Actualizar</a>
           </button>
-          <button style="margin-left: 10px;">
-            <a href="{% url 'EliminaGato' gato.id %}">Eliminar</a>
+          <button style="margin-left: 10px;" class="btn btn-primary" id="sidebarToggle">
+            <a href="{% url 'EliminaGato' gato.id %}" style="color: black; text-decoration: none;">Eliminar</a>
           </button>
         </div>
         {% endif %}

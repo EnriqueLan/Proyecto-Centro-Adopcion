@@ -1,7 +1,18 @@
 from django import forms
 from .models import Avatar
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
+
+
+class RegistroFormulario(UserCreationForm):
+    username = forms.CharField(label="Nombre de usuario")
+    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2')
 
 class UserEditForm(UserChangeForm):
 
@@ -15,18 +26,13 @@ class UserEditForm(UserChangeForm):
 
   class Meta:
     model=User
-    fields=["email", "first_name", "last_name"]
+    fields=["email", "first_name", "last_name",]
+    labels = {
+            'email': 'Correo Electrónico',
+            'first_name': 'Nombre',
+            'last_name': 'Apellido',
+        }
 
-  def clean_password2(self):
-
-    print(self.cleaned_data)
-
-    password1 = self.cleaned_data["password1"]
-    password2 = self.cleaned_data["password2"]
-
-    if password1 != password2:
-      raise forms.ValidationError("Las contraseñas deben ser iguales")
-    return password2
 
 class AvatarFormulario(forms.ModelForm):
 
