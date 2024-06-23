@@ -2,7 +2,10 @@
 {% block content %}
 <h1> Vista en detalle del gato </h1>
 
-<h4> {{gato.Name}}, {{gato.Race}}, {{gato.Gender}}, {{gato.Age}}</h4>
+<h4>Nombre: {{gato.Name}}</h4>
+<h4>Raza: {{gato.Race}}</h4>
+<h4>Genero: {{gato.Gender}}</h4>
+<h4>Edad: {{gato.Age}}</h4>
 {% if gato.Foto %}
     <img src="{{ gato.Foto.url }}" alt="{{ gato.Name }}" style="max-width: 300px; max-height: 300px;">
 {% else %}

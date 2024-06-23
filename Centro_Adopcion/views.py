@@ -114,7 +114,7 @@ class CatUpdate(LoginRequiredMixin, UpdateView):
     model = Cats
     template_name = 'gato_update.html'
     fields = '__all__'
-    success_url = reverse_lazy("centro-adopcion")
+    success_url = reverse_lazy("home")
     context_object_name = "gato"
 
     def form_valid(self, form):

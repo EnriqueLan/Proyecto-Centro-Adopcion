@@ -2,6 +2,12 @@
 {% block content %}
 <h1> Vista en detalle de la Adopción </h1>
 
-<h4> {{adopcion.User_Name}}, {{adopcion.User_Lastname}}, {{adopcion.User_Adress}}, 0{{adopcion.Celphone_Number}}, {{adopcion.Pet_Name}}, {{adopcion.Pet_Race}}</h4>
+<h4>Nombre real del Usuario: {{adopcion.User_Name}}</h4>
+<h4>Apellido del Usuario: {{adopcion.User_Lastname}}</h4>
+<h4>Su direccion: {{adopcion.User_Adress}}</h4>
+<h4>Numero de Telefono para comunicarse: 0{{adopcion.Celphone_Number}}</h4>
+<h4>Nombre de la Mascota que quiere Adoptar: {{adopcion.Pet_Name}}</h4>
+<h4>Especie de la Mascota: {{adopcion.Pet_Race}}</h4>
+
 
 {% endblock %}
